@@ -1,0 +1,21 @@
+import pyttsx3
+engine = pyttsx3.init()
+
+rate = engine.getProperty('rate')   
+print (rate)            
+engine.setProperty('rate', 90)
+
+volume = engine.getProperty('volume')   
+print (volume)                    
+engine.setProperty('volume',10.0) 
+
+voices = engine.getProperty('voices')       
+#engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
+engine.setProperty('voice', voices[1].id)
+
+engine.say("En kangalai parithu kondu en innum pesavillai\
+Aalaana oru seidhi ariyamalae alaipaayum siru pedhai naano\
+Un perum en perum theriyamalae ullangal idam maarum yeno\
+Vaai pesavae vaaipillaiyae vali theera vazhi ennavo")
+engine.runAndWait()
+engine.stop()

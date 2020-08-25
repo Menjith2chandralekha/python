@@ -1,0 +1,38 @@
+# Import the required module for text 
+# to speech conversion 
+from gtts import gTTS 
+
+# This module is imported so that we can 
+# play the converted audio 
+import os 
+
+# The text that you want to convert to audio 
+mytext =  " Kaaveri aarum kai kuthal arisiyum\
+Maranthu poguma\
+Oh thavani pengalum thoothu vidum kangalum\
+Tholainthu poguma\
+Namma kalathu medu Kamma karai karisa kaadu Semmann alli thelikkum roadu \
+Sadugudu sadugudu aadiya marathadi\
+Padu padu paduvena porthiya pulveli\
+Thoda thoda thoda thoda udaikira pani thuli\
+Suda suda suda suda kidaikkira idli\
+thada thada thadavena athirgira rayiladi\ murukkiya meesaigal\
+Manathil irukkuthu"
+
+
+
+# Language in which you want to convert 
+language = 'fr'
+
+# Passing the text and language to the engine, 
+# here we have marked slow=False. Which tells 
+# the module that the converted audio should 
+# have a high speed 
+myobj = gTTS(text=mytext, lang=language, slow=False) 
+
+# Saving the converted audio in a mp3 file named 
+# welcome 
+myobj.save("welcome.mp3") 
+
+# Playing the converted file 
+os.system("welcome.mp3") 
